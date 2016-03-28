@@ -1,0 +1,29 @@
+<!-- //ADD -->
+<div ng-controller="AddController">
+  <form name="form" ng-submit="submit(petObject)">
+    <input name="name" ng-model="petObject.name" type="text" placeholder="animal name" />
+    <input name="animal" ng-model="petObject.animal" type="text" placeholder="type" />
+    <input name="age" ng-model="petObject.age" type="text" placeholder="age" />
+    <input name="url" ng-model="petObject.url" type="text" placeholder="image url" />
+    <md-button class="md-warn" type="submit"/>sumbit</button>
+  </form>
+</div>
+<!-- //SHOW -->
+
+<div ng-controller="SecondShowController" layout-margin>
+  <mdt-table>
+    <mdt-header-row>
+      <mdt-column align-rule="left">Name</mdt-column>
+      <mdt-column align-rule="right">Type</mdt-column>
+      <mdt-column align-rule="right">Age</mdt-column>
+      <mdt-column align-rule="right">Image</mdt-column>
+
+    </mdt-header-row>
+    <mdt-row ng-repeat="entry in allPetsReturned.thePets">
+      <mdt-cell>{{entry.name}}</mdt-cell>
+      <mdt-cell>{{entry.animal}}</mdt-cell>
+      <mdt-cell>{{entry.age}}</mdt-cell>
+      <mdt-cell><img class="animal-images" ng-src="{{entry.url}}"></mdt-cell>
+    </mdt-row>
+  </mdt-table>
+</div>

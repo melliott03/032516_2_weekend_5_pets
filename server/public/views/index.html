@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Weekend 5 Pets Project</title>
+  <!--STYLES-->
+  <link rel="stylesheet" href="/assets/vendors/angular-material.min.css">
+  <link rel="stylesheet" href="/assets/styles/style.css">
+</style>
+<!--SCRIPTS-->
+<script type="text/javascript" src="/assets/vendors/angular.min.js"></script>
+<script type="text/javascript" src="/assets/vendors/angular-route.min.js"></script>
+<script type="text/javascript" src="/assets/vendors/angular-aria.min.js"></script>
+<script type="text/javascript" src="/assets/vendors/angular-animate.min.js"></script>
+<script type="text/javascript" src="/assets/vendors/angular-material.min.js"></script>
+<script type="text/javascript" src="/assets/vendors/angular-messages.min.js"></script>
+<script type="text/javascript" src="/assets/scripts/app.js"></script>
+<script type="text/javascript" src="/assets/scripts/controllers.js"></script>
+<script type="text/javascript" src="/assets/scripts/factories.js"></script>
+</head>
+<body>
+
+  <div layout-align="center" layout="row">
+    <p><md-button class="md-raised md-warn"><a href="#home">HOME</a></button></p>
+      <p><md-button class="md-raised md-warn"><a href="#add">ADD</a></button></p>
+        <p><md-button class="md-raised md-warn"><a href="#view">VIEW</a></button></p>
+          <p><md-button class="md-raised md-warn"><a href="#view_table">VIEW AS TABLE</a></button></p>
+            <p><md-button class="md-raised md-warn"><a href="#view_table_second">VIEW AS TABLE 2</a></button></p>
+            </div>
+
+            <div class="content" layout-align="center">
+              <main ng-view ></main>
+            </div>
+
+          </body>
+          </html>

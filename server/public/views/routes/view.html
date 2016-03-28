@@ -1,0 +1,26 @@
+<!-- //ADD -->
+<div ng-controller="AddController">
+  <form name="form" ng-submit="submit(petObject)">
+    <input name="name" ng-model="petObject.name" type="text" placeholder="animal name" />
+    <input name="animal" ng-model="petObject.animal" type="text" placeholder="type" />
+    <input name="age" ng-model="petObject.age" type="text" placeholder="age" />
+    <input name="url" ng-model="petObject.url" type="text" placeholder="image url" />
+    <md-button class="md-warn" type="submit"/>sumbit</button>
+  </form>
+</div>
+<!-- //SHOW -->
+<div ng-controller="ShowController">
+  <button class="md-warn" ng-click="sort='name'; reverse=!reverse">reverse Name</button>
+
+  <div layout-align="center" layout="row">
+    <div ng-repeat="entry in allPetsReturned.thePets | orderBy:sort | orderBy:sort:reverse" class="slide" >
+      <p>Name: {{entry.name }}</p>
+      <p>Type: {{entry.animal}}</p>
+      <p>Age: {{entry.age}}</p>
+      <img class="animal-images" ng-src="{{entry.url}}"><br>
+      <div ng-controller="DeleteController">
+        <md-button  class="md-raised md-warn" ng-click="deleteData(entry._id)">Delete</button>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>

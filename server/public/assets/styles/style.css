@@ -1,0 +1,8 @@
+.animal-images{
+  width: auto;
+  height: 10vw;
+  overflow: hidden;
+}
+.content{
+  max-width: 200vw;
+}

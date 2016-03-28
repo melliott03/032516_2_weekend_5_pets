@@ -1,0 +1,35 @@
+<!-- //ADD -->
+<div ng-controller="AddController">
+  <form name="form" ng-submit="submit(petObject)">
+    <input name="name" ng-model="petObject.name" type="text" placeholder="animal name" />
+    <input name="animal" ng-model="petObject.animal" type="text" placeholder="type" />
+    <input name="age" ng-model="petObject.age" type="text" placeholder="age" />
+    <input name="url" ng-model="petObject.url" type="text" placeholder="image url" />
+    <md-button class="md-warn" type="submit"/>sumbit</button>
+  </form>
+</div>
+<!-- //SHOW -->
+<table>
+  <thead>
+    <tr class="row" >
+      <th><a ng-click="changeTblSort('name')">Name</a></th>
+      <th><a ng-click="changeTblSort('animal')">Type</a></th>
+      <th><a ng-click="changeTblSort('age')">Age</a></th>
+      <th><a ng-click="changeTblSort('age')">Image</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row" ng-repeat="entry in allPetsReturned.thePets | filter:filter | orderBy:sort:reverse">
+      <td>{{entry.name}}</td>
+      <td>{{entry.animal}}</td>
+      <td>{{entry.age}}</td>
+      <td><img class="animal-images" ng-src="{{entry.url}}"></td>
+      <td><div ng-controller="DeleteController">
+        <md-button  class="md-raised md-warn" ng-click="deleteData(entry._id)">Delete</button>
+        </div></td>
+        <td class="progress"><div class="bar" style="width: {{entry.percentRemaining}}%"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
